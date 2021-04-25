@@ -244,7 +244,7 @@ export const EditableRow: React.FC<EditableRowProps> = ({
         sx={{
           ...editableStyle,
           fontWeight: "medium",
-          bg: invalid ? "invalid" : "background"
+          bg: invalid ? "invalid" : "white"
         }}
       />
     </Row>
@@ -253,7 +253,7 @@ export const EditableRow: React.FC<EditableRowProps> = ({
       <StaticAmounts
         sx={{
           ...editableStyle,
-          bg: invalid ? "invalid" : "background"
+          bg: invalid ? "invalid" : "white"
         }}
         labelledBy={`${inputId}-label`}
         onClick={() => setEditing(inputId)}

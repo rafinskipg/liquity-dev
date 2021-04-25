@@ -1,13 +1,14 @@
 import { Theme, ThemeUIStyleObject } from "theme-ui";
 
 const baseColors = {
-  blue: "#1542cd",
+  blue: "#4fa2ae",
   purple: "#745ddf",
   cyan: "#2eb6ea",
   green: "#28c081",
   yellow: "#fd9d28",
   red: "#dc2c10",
-  lightRed: "#ff755f"
+  lightRed: "#ff755f",
+  black: '#0d1a43'
 };
 
 const colors = {
@@ -23,8 +24,9 @@ const colors = {
   invalid: "pink",
 
   text: "#293147",
-  background: "white",
-  muted: "#eaebed"
+  
+  background: baseColors.black,
+  muted: "#8aecae"
 };
 
 const buttonBase: ThemeUIStyleObject = {
@@ -96,8 +98,8 @@ const infoCard: ThemeUIStyleObject = {
   padding: 3,
 
   borderColor: "rgba(122,199,240,0.4)",
-  background: "linear-gradient(200deg, #d4d9fc, #cae9f9)",
-
+  background: "linear-gradient(200deg, #000000, #382db3)",
+  color: 'white',
   h2: {
     mb: 2,
     fontSize: cardHeadingFontSize
@@ -115,7 +117,7 @@ const formBase: ThemeUIStyleObject = {
 const formCell: ThemeUIStyleObject = {
   ...formBase,
 
-  bg: "background",
+  bg: "white",
   border: 1,
   borderColor: "muted",
   borderRadius: 0,
@@ -140,9 +142,6 @@ const modalOverlay: ThemeUIStyleObject = {
   height: "100vh"
 };
 
-const headerGradient: ThemeUIStyleObject = {
-  background: `linear-gradient(90deg, ${colors.background}, ${colors.muted})`
-};
 
 const theme: Theme = {
   breakpoints: ["48em", "52em", "64em"],
@@ -255,7 +254,9 @@ const theme: Theme = {
       padding: 0,
 
       borderColor: "muted",
-      bg: "background",
+      bg: "white",
+      borderBottomRightRadius: 10,
+      borderBottomLeftRadius: 10,
 
       "> h2": {
         display: "flex",
@@ -292,6 +293,36 @@ const theme: Theme = {
       overflowY: "scroll"
     },
 
+    welcome : {
+      background: 'url(/bg-notice.svg)',
+      color: 'white',
+      marginTop: [30, '60px'],
+      marginBottom: 10,
+      borderRadius: '15px',
+      paddingTop: 30,
+      paddingBottom: 30,
+      paddingLeft: [5, 30],
+      img : {
+        width: [50, 110],
+        maxWidth: '100%'
+      },
+      h1: {
+        fontSize: [15, 25],
+        margin: 0,
+        marginBottom: '5px'
+      },
+      h2: {
+        fontSize: [15, 20],
+        margin: 0
+      },
+      ".network" : {
+        fontSize: 13
+      },
+      a : {
+        color: colors.background
+      }
+    },
+
     tooltip: {
       padding: 2,
 
@@ -299,10 +330,10 @@ const theme: Theme = {
       borderColor: "muted",
       borderRadius: "4px",
       bg: "background",
+      color: "white",
       boxShadow: 2,
 
       fontSize: 1,
-      color: "text",
       fontWeight: "body",
       zIndex: 1
     }
@@ -343,7 +374,8 @@ const theme: Theme = {
       px: [2, "12px", "12px", 5],
       py: [2, "12px", "12px"],
 
-      ...headerGradient,
+      background: colors.background,
+      color: 'white',
       boxShadow: [1, "none"]
     },
 
@@ -437,7 +469,7 @@ const theme: Theme = {
       borderColor: "muted",
       mr: "25vw",
       height: "100%",
-      ...headerGradient
+      background: colors.background
     },
 
     badge: {
@@ -482,7 +514,11 @@ const theme: Theme = {
       textTransform: "uppercase",
       letterSpacing: "2px",
       width: ["100%", "auto"],
-      mt: [3, "auto"]
+      mt: [3, "auto"],
+      '&:hover, &:focus, &.active': {
+        color: colors.background,
+        background: colors.muted
+      },
     }
   }
 };

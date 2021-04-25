@@ -27,6 +27,7 @@ export const FrontendRegistrationSuccess: React.FC<FrontendRegistrationSuccessPr
 
         border: 1,
         borderRadius: "8px",
+        background: 'white',
         borderColor: "success",
         boxShadow: 2
       }}

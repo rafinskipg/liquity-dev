@@ -23,7 +23,8 @@ export const UnregisteredFrontend: React.FC = () => {
         border: 1,
         borderRadius: "8px",
         borderColor: "warning",
-        boxShadow: 2
+        boxShadow: 2,
+        background: 'white'
       }}
     >
       <Flex sx={{ alignItems: "center", mx: 3, mb: 2 }}>

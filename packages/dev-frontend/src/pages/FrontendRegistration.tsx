@@ -88,6 +88,7 @@ export const FrontendRegistration: React.FC = () => {
           border: 1,
           borderRadius: "8px",
           borderColor: "danger",
+          background: 'white',
           boxShadow: 2
         }}
       >
